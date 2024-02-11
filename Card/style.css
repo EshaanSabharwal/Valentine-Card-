@@ -102,6 +102,10 @@ body {
     animation: scale 3s linear infinite;
     z-index: -1;
   }
+   .imgbox img{
+    width: 0;
+    transition: width 1s ease-in-out;
+}
   
   /* To move the envelope up and down */
   @keyframes up {
