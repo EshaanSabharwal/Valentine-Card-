@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINE'S DAY 💓</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/howler@2.2.3/dist/howler.min.js"></script>
+</head>
+
+
+<body>
+    <button id="playButton" style="opacity: 0;">Play Music</button>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.all.min.js"></script>
+    <script>
+    
+        function showPopup() {
+            Swal.fire({
+                title: 'Ready ?',
+                showCancelButton: false,
+                confirmButtonText: 'Yes',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    playMusic();
+                }
+            });
+        }
+
+        function playMusic() {
+            var audio = new Audio('./sound.mp3');
+            audio.play();
+            const container = document.getElementById('container').classList.remove('blur');
+            const billa = document.getElementById('billa').classList.remove('blur');
+        }
+        document.getElementById('playButton').addEventListener('click', showPopup);
+        window.onload = showPopup;
+    </script>
+
+
+    <div id="container" class="container blur">
+        <div class="VALENTINE">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <!-- <div class="text">HAPPY</br> VALENTINE'S</br> DAY!</br> LOVE ❤️</div> -->
+                <p>Happy Valentine's</p>
+                <p>Day!</p>
+                <p>Love ❤️</p>
+            </div>
+        </div>
+    </div>
+        <div class="shadow"></div>
+    <div><img src="excited.gif" id="billa" class="billa blur"> </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
